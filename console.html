@@ -13,6 +13,38 @@
         testArray2.push(i);
     }
     console.log(testArray2);
-    // I am a comment.
-
+    // Now, let's create a flexible looping function.
+    // The function has three parameters with which to control
+    //  the for loop that it contains.
+    function countingArrayGen(start=1,end=100,stride=1){
+        if (stride == 0){
+            console.log("that stride won't work");
+            return;
+        }
+        newArray = [];
+        for (i=start;stride > 0 ? i<=end : i>=end;i+=stride) {
+            newArray.push(i);
+        }
+        return newArray;
+    };
+    // Let's test it out:
+    console.log(countingArrayGen());
+    console.log(countingArrayGen(10));
+    console.log(countingArrayGen(1,10));
+    console.log(countingArrayGen(100000,0,-1080));
+    console.log(countingArrayGen(10,9));
+    console.log(countingArrayGen(10,9,-.4));
+    console.log(countingArrayGen(101));
+    // Now, let's try a simple RSVP function example:
+    var attendArray = [];
+    function rsvp (yesOrNo,numOfGuests){
+        if (yesOrNo ==true){
+            attendArray.push(true);
+            for (i=1;i <= numOfGuests;i++){
+                attendArray.push(true);
+            };
+        };
+    };
+    rsvp(true,65);
+    console.log(attendArray);
 </script>
