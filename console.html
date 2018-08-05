@@ -97,4 +97,23 @@
     }
     console.log(myObj);
     console.log(changeEverything3(myObj,53));
+    // now apparently we're supposed to learn...
+    //  ...how to iterate through an object lmao!
+    var personalInfo = {
+        twitter: "twitterHandle",
+        email: "email@email.com",
+        firstName: 'John',
+        lastName: 'Doe',
+        otherThings: 'whatever'
+    };
+    console.log(personalInfo.twitter);
+    console.log(personalInfo['twitter']);
+    for (i in personalInfo){
+        console.log(i + ': ' + personalInfo[i]);
+    };
+    for (i in personalInfo){
+        personalInfo[i] = 'testing';
+        console.log(personalInfo[i]);
+    };
+    console.log(personalInfo);
 </script>
