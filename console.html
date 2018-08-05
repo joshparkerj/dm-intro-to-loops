@@ -47,4 +47,54 @@
     };
     rsvp(true,65);
     console.log(attendArray);
+    // Now, let's look at ways of iterating over arrays:
+    var nameArray = ["David"," Michael"," Smith"];
+    var text = '';
+    for(i=0;i<nameArray.length;i++){
+        text += nameArray[i];
+    };
+    console.log(text);
+    // How about an array replacing function?
+    function changeEverything(arr,value){
+        for (i in arr){
+            arr[i] = value;
+        }
+        return arr;
+    };
+    // Now let's do it with the other syntax:
+    function changeEverything2(arr,value){
+        for (i=0;i<arr.length;i++){
+            arr[i] = value;
+        }
+        return arr;
+    }
+    var testArray3 = [5,7,9,11];
+    var testArray4 = [5,7,9,11];
+    console.log(testArray3);
+    console.log(changeEverything(testArray3,'Hi'));
+    console.log(testArray4);
+    console.log(changeEverything2(testArray4,'this is a test'));
+    // How about doing that with an object?
+    function changeEverything3(obj,value){
+        for (i in obj){
+            obj[i] = value;
+        }
+        return obj;
+    }
+    var testObject = {
+        tree: 'spruce',
+        dog: 'boxer',
+        album: 'dirty computer',
+        color: 'gold',
+        dream: 'the world lives as one'
+    };
+    console.log(testObject);
+    console.log(changeEverything3(testObject,'love'));
+    var myObj = {
+        thing1:1,
+        thing2:2,
+        thing3:3
+    }
+    console.log(myObj);
+    console.log(changeEverything3(myObj,53));
 </script>
